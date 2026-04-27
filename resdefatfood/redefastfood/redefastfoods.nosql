@@ -1,0 +1,31 @@
+
+
+criando banco de dados
+use redefastfood
+ 
+Criando collection lojas
+db.lojas.insertOne({nome: "FastFood Centro",cidade: "São Paulo",endereco: "Av. Paulista, 1000"})
+db.lojas.insertOne({nome: "FastFood norte",cidade: "São Paulo",endereco: "Rua das Rosas, 500"})
+db.lojas.insertOne({nome: "FastFood sul",cidade: "São Paulo",endereco: "Rua Samanbaia, 300"})
+ 
+Criando collection produtos
+db.produtos.insertOne({nome: "Hamburguer",preco: 15.90,categoria: "Lanche"})
+db.produtos.insertOne({nome: "Batata frita",preco: 10.00,categoria: "petisco"})
+db.produtos.insertOne({nome: "Suco",preco: 6.00,categoria: "Bebida"})
+ 
+exibindo dados
+db.lojas.find()
+db.produtos.find()
+ 
+realizando o backup
+mongodump--db redefastfood C:\backup\redefastfood
+ 
+Excluindo o banco
+db.dropDatabase()
+ 
+Realizando o restore
+mongorestore --db redefastfood C:\backup\redefastfood\restore
+ 
+Excluindo o banco novamente
+db.dropDatabase()
+
